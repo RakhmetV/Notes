@@ -11,6 +11,7 @@ using Notes.Application.Common.Mapping;
 using Notes.Application.Interfacies;
 using Notes.Persistense;
 using Notes.Application.Common.Mapping;
+using Notes.WebApi.Middleware;
 
 namespace Notes.WebApi
 {
@@ -51,12 +52,14 @@ namespace Notes.WebApi
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCustomExceptionHandler();
            
             app.UseRouting();
             app.UseHttpsRedirection();
             app.UseCors("AllowAll");
-            app.UseAuthentication();
-            app.UseAuthorization();
+            //app.UseAuthentication();
+            //app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

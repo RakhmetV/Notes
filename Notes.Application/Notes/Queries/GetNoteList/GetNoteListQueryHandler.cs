@@ -11,7 +11,8 @@ using System.Threading.Tasks;
 
 namespace Notes.Application.Notes.Queries.GetNoteList
 {
-    public class GetNoteListQueryHandler : IRequestHandler<GetNoteListQuery, NoteListVm>
+    public class GetNoteListQueryHandler 
+        : IRequestHandler<GetNoteListQuery, NoteListVm>
     {
         private readonly INoteDbContext _dbContext;
         private readonly IMapper _mapper;
